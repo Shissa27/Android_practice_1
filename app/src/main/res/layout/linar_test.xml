@@ -5,14 +5,14 @@
     android:orientation="horizontal"
     android:layout_gravity="bottom"
     >
-
     <Button
         android:id="@+id/bottom_button_current_view"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:textColor="@color/font"
-        android:text="view" />
+        android:text="@string/view"
+        />
 
     <Button
         android:id="@+id/bottom_button_2"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/font"
-        android:text="map" />
+        android:text="@string/map" />
 
     <Button
         android:id="@+id/bottom_button_3"
@@ -28,5 +28,5 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/font"
-        android:text="info" />
+        android:text="@string/info" />
 </LinearLayout>

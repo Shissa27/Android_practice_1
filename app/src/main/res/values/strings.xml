@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Practica_1</string>
     <string name="on_screen_text">Введите координаты</string>
+    <string name="view">view</string>
+    <string name="map">map</string>
+    <string name="info">info</string>
 
 </resources>
