@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.linar_test);
         Toast toast = Toast.makeText(MainActivity.this, "Toast_onCreate", duration);
         toast.show();
         Log.i(TAG,"Toast_onCrate_is_showed");
