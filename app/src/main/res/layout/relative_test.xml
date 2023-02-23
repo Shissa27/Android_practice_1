@@ -10,7 +10,7 @@
         android:layout_height="100dp"
         android:scaleType="centerCrop"
 
-        android:src="@drawable/mem" />
+        android:src="@drawable/moon" />
 
 
     <TextView
@@ -20,6 +20,7 @@
         android:layout_below="@id/image_view"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
-        android:text="Введите координаты"
-        android:textSize="18sp" />
+        android:text="@string/on_screen_text"
+        android:textSize="18sp"
+        android:textColor="@color/black"/>
 </RelativeLayout>
