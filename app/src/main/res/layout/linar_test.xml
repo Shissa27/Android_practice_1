@@ -6,7 +6,7 @@
     android:layout_gravity="bottom"
     >
     <Button
-        android:id="@+id/bottom_button_current_view"
+        android:id="@+id/button_current_view"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
@@ -15,15 +15,16 @@
         />
 
     <Button
-        android:id="@+id/bottom_button_2"
+        android:id="@+id/button_map"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:textColor="@color/font"
-        android:text="@string/map" />
+        android:text="@string/map"
+        android:onClick="onButtonClick"/>
 
     <Button
-        android:id="@+id/bottom_button_3"
+        android:id="@+id/button_info"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
