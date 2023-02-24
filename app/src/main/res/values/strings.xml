@@ -4,5 +4,7 @@
     <string name="view">view</string>
     <string name="map">map</string>
     <string name="info">info</string>
+    <string name="starting_text">Starting Text</string>
+    <string name="go_back">Go back</string>
 
 </resources>
