@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.practica_1.databinding.ActivityMainBinding;
 import com.example.practica_1.databinding.RelativeTestBinding;
+import com.example.practica_1.databinding.ViewBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "myLogs";//Тег - метка для сообщения
@@ -32,23 +33,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void onButtonClick(View view) {
-        EditText editText = findViewById(R.id.enter_point);
+        Log.v(TAG, "Button clicked declared");
+        /*EditText editText = findViewById(R.id.enter_point);
         String text = editText.getText().toString();
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra("message", text);
-        startActivityForResult(intent, 1);
+        startActivityForResult(intent, 1);*/
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        //RelativeTestBinding relBinding = RelativeTestBinding.bind(findViewById(R.id.text_view));
+        ViewBinding binding = ViewBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        textView = findViewById(R.id.text_view);
-        //textView = relBinding.textView;
-        textView.setText("Строка из кода viewBinding");
-        Button button = findViewById(R.id.button_current_view);
-        button.setOnClickListener(new View.OnClickListener() {
+        binding.textView.setText("Строка из кода viewBinding");
+        binding.imageView.setImageResource(R.drawable.mem);
+        binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Button clicked");
