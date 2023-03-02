@@ -14,14 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.practica_1.databinding.ActivityMainBinding;
+import com.example.practica_1.databinding.NewmainlayoutBinding;
 import com.example.practica_1.databinding.RelativeTestBinding;
 import com.example.practica_1.databinding.ViewBinding;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "myLogs";//Тег - метка для сообщения
     int duration = Toast.LENGTH_SHORT;
-    private TextView textView;
-    private ImageView imageView;
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
@@ -34,20 +33,19 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onButtonClick(View view) {
         Log.v(TAG, "Button clicked declared");
-        /*EditText editText = findViewById(R.id.enter_point);
+        EditText editText = findViewById(R.id.get_coordinate);
         String text = editText.getText().toString();
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         intent.putExtra("message", text);
-        startActivityForResult(intent, 1);*/
+        startActivityForResult(intent, 1);
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ViewBinding binding = ViewBinding.inflate(getLayoutInflater());
+        NewmainlayoutBinding binding = NewmainlayoutBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        binding.textView.setText("Строка из кода viewBinding");
-        binding.imageView.setImageResource(R.drawable.mem);
-        binding.button.setOnClickListener(new View.OnClickListener() {
+
+        binding.getLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "Button clicked");
