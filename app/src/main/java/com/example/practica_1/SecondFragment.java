@@ -31,13 +31,13 @@ public class SecondFragment extends Fragment {
         Toast.makeText(getActivity(), "onCreate", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreate");
 
-        /*getParentFragmentManager().setFragmentResultListener("requestKey  ", this, new FragmentResultListener() {
+        getParentFragmentManager().setFragmentResultListener("requestKey", this, new FragmentResultListener() {
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
                 String result = bundle.getString("bundleKey");
                 Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
                 Log.i(TAG,"Got_info");
             }
-        });*/
+        });
     }
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

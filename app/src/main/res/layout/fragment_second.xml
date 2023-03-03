@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/image_second"
-            android:layout_width="400dp"
-            android:layout_height="400dp"
+            android:layout_width="600dp"
+            android:layout_height="600dp"
             android:src="@drawable/asrtomap"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/text_second"

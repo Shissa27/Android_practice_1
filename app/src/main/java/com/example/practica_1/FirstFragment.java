@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.practica_1.databinding.FragmentFirstBinding;
@@ -37,20 +39,24 @@ public class FirstFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Toast.makeText(getActivity(), "onCreateView", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreateView");
-        FragmentFirstBinding binding = FragmentFirstBinding.inflate(getLayoutInflater());
-        /*binding.getLocationFirstFragment.setOnClickListener(new View.OnClickListener() {
+        View view = inflater.inflate(R.layout.fragment_first, container, false);
+        Button button = (Button) view.findViewById(R.id.get_location_first_fragment);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EditText editText = (EditText) view.findViewById(R.id.get_coordinate);
                 Bundle result = new Bundle();
-                result.putString("bundleKey", String.valueOf(binding.getCoordinate.getText()));
-                getParentFragmentManager().setFragmentResult("requestKey", result);
-                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-                SecondFragment secondFragment = new SecondFragment();
-                fragmentTransaction.replace(R.id.frame,secondFragment);
+                result.putString("bundleKey", String.valueOf(editText.getText()));
+                getParentFragmentManager().setFragmentResult(
+                        "requestKey", result);
+                FragmentManager fragmentManager = getParentFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame, new SecondFragment());
+                fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
             }
-        });*/
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        });
+        return view;
     }
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
