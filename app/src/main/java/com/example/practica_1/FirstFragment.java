@@ -4,17 +4,22 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
+
+import com.example.practica_1.databinding.FragmentFirstBinding;
 
 
 public class FirstFragment extends Fragment {
     String TAG = "Fragment 1";
-    @Override
+
+        @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         Toast.makeText(context, "onAttach", Toast.LENGTH_SHORT).show();
@@ -26,12 +31,25 @@ public class FirstFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Toast.makeText(getActivity(), "onCreate", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreate");
+
     }
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Toast.makeText(getActivity(), "onCreateView", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreateView");
+        FragmentFirstBinding binding = FragmentFirstBinding.inflate(getLayoutInflater());
+        /*binding.getLocationFirstFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle result = new Bundle();
+                result.putString("bundleKey", String.valueOf(binding.getCoordinate.getText()));
+                getParentFragmentManager().setFragmentResult("requestKey", result);
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                SecondFragment secondFragment = new SecondFragment();
+                fragmentTransaction.replace(R.id.frame,secondFragment);
+                fragmentTransaction.commit();
+            }
+        });*/
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
     @Override
@@ -46,6 +64,7 @@ public class FirstFragment extends Fragment {
         super.onStart();
         Toast.makeText(getActivity(), "onStart", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onStart");
+
     }
 
     @Override

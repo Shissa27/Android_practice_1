@@ -3,13 +3,18 @@ package com.example.practica_1;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.practica_1.databinding.FragmentSecondBinding;
 
 public class SecondFragment extends Fragment {
     String TAG = "Fragment 2";
@@ -25,6 +30,14 @@ public class SecondFragment extends Fragment {
         super.onCreate(savedInstanceState);
         Toast.makeText(getActivity(), "onCreate", Toast.LENGTH_SHORT).show();
         Log.d(TAG, "onCreate");
+
+        /*getParentFragmentManager().setFragmentResultListener("requestKey  ", this, new FragmentResultListener() {
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle bundle) {
+                String result = bundle.getString("bundleKey");
+                Toast.makeText(getActivity(), result, Toast.LENGTH_SHORT).show();
+                Log.i(TAG,"Got_info");
+            }
+        });*/
     }
    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
