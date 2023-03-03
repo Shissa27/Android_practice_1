@@ -33,4 +33,60 @@ public class SecondFragment extends Fragment {
         Log.d(TAG, "onCreateView");
         return inflater.inflate(R.layout.fragment_second, container, false);
     }
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Toast.makeText(getActivity(), "onActivityCreated", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onActivityCreated");
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Toast.makeText(getActivity(), "onStart", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onStart");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Toast.makeText(getActivity(), "onResume", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onResume");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Toast.makeText(getActivity(), "onPause", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onPause");
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        Toast.makeText(getActivity(), "onStop", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onStop");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Toast.makeText(getActivity(), "onDestroyView", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onDestroyView");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Toast.makeText(getActivity(), "onDestroy", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onDestroy");
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Toast.makeText(getActivity(), "onDetach", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "onDetach");
+    }
+
 }
