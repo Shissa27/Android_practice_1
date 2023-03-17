@@ -27,7 +27,27 @@ public class FirstFragment extends Fragment {
         FragmentFirstBinding binding = FragmentFirstBinding.inflate(getLayoutInflater());
         goFind = binding.getLocationFirstFragment;
         goInfo = binding.getInfo;
-
+        FragmentManager fragmentManager = getParentFragmentManager();
+        goFind.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG,"BTN1");
+                FragmentTransaction fragmentTransaction;
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame,new SecondFragment());
+                fragmentTransaction.commit();
+            }
+        });
+        goInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.i(TAG,"BTN2");
+                FragmentTransaction fragmentTransaction;
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame,new ThirdFragment());
+                fragmentTransaction.commit();
+            }
+        });
         return inflater.inflate(R.layout.fragment_first, container, false);
     }
 

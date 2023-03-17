@@ -49,10 +49,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newmainlayout);
         FirstFragment firstFragment = new FirstFragment();
-        SecondFragment secondFragment = new SecondFragment();
-        replaceFragment(firstFragment);
-
-
+        addFragment(firstFragment);
     }
 
 }
