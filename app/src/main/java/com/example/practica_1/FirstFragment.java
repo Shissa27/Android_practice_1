@@ -48,7 +48,7 @@ public class FirstFragment extends Fragment {
                 fragmentTransaction.commit();
             }
         });
-        return inflater.inflate(R.layout.fragment_first, container, false);
+        return binding.getRoot();
     }
 
 
