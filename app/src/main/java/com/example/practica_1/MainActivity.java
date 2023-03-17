@@ -48,33 +48,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.newmainlayout);
-        button_info = findViewById(R.id.get_info_fragment);
-        button_location = findViewById(R.id.get_location_fragment);
-        button_map = findViewById(R.id.get_map_fragment);
         FirstFragment firstFragment = new FirstFragment();
         SecondFragment secondFragment = new SecondFragment();
-        addFragment(firstFragment);
-        button_info.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addFragment(new SecondFragment());
-                Log.i(TAG,"BTN_INFO");
-            }
-        });
-        button_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG,"BTN_MAP");
-                //replaceFragment(secondFragment);
-            }
-        });
-        button_location.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Log.i(TAG,"BTN_LOC");
-                //replaceFragment(firstFragment);
-            }
-        });
+        replaceFragment(firstFragment);
+
 
     }
 

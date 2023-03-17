@@ -20,11 +20,15 @@ import com.example.practica_1.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
     String TAG = "Fragment 1";
+    Button goFind,goInfo;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        FragmentFirstBinding binding = FragmentFirstBinding.inflate(getLayoutInflater());
+        goFind = binding.getLocationFirstFragment;
+        goInfo = binding.getInfo;
 
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        return inflater.inflate(R.layout.fragment_first, container, false);
     }
 
 
