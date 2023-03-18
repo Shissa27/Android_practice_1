@@ -4,40 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondFragment">
-
-    <FrameLayout
-        android:id="@+id/frame2"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="400dp" />
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:paddingTop="16dp">
+    <ImageView
+        android:id="@+id/map"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:src="@drawable/asrtomap"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop" />
+    <TextView
+        android:id="@+id/second_fragment_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/map"
+        android:layout_marginTop="15dp"
+        android:textColor="@color/black"
+        android:text="@string/objectlist"
+        android:textSize="16sp"
+        android:layout_marginLeft="120dp"/>
+    </RelativeLayout>
+        <ListView
+            android:id="@+id/vlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="420dp"
+            android:layout_marginBottom="40dp" />
+        "/>
 
-        <ImageView
-            android:id="@+id/image_second"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:src="@drawable/asrtomap"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/text_second"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="16dp"/>
-
-        <TextView
-            android:id="@+id/text_second"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="@string/objectlist"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_second" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
