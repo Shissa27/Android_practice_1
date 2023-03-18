@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,6 +53,13 @@ public class SecondFragment extends Fragment {
         }
         CustomViewListAdapter viewListAdapter = new CustomViewListAdapter(binding.getRoot().getContext(),R.layout.vlist_orig,Stars);
         binding.vlist.setAdapter(viewListAdapter);
+        binding.vlist.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getContext(),Stars.get(i),Toast.LENGTH_SHORT).show();
+                Log.i(TAG,Stars.get(i)+" pressed");
+            }
+        });
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

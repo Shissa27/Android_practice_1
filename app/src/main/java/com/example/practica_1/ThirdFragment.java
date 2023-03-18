@@ -29,7 +29,7 @@ public class ThirdFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         binding.rview.setLayoutManager(linearLayoutManager);
 
-        CustomRecyclerViewAdapter customRecyclerViewAdapter = new CustomRecyclerViewAdapter(getLayoutInflater(),info);
+        CustomRecyclerViewAdapter customRecyclerViewAdapter = new CustomRecyclerViewAdapter(getLayoutInflater(),info,getContext());
         binding.rview.setAdapter(customRecyclerViewAdapter);
     }
     @Override

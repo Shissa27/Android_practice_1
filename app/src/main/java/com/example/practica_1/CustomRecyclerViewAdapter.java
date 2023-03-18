@@ -1,11 +1,13 @@
 package com.example.practica_1;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,11 +17,13 @@ import java.util.List;
 public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecyclerViewAdapter.ViewHolder> {
     private LayoutInflater inflater;
     private List<String> INFO;
-    //private Context context;
+    private Context context;
 
-    public CustomRecyclerViewAdapter(LayoutInflater inflater, List<String> INFO) {
+
+    public CustomRecyclerViewAdapter(LayoutInflater inflater, List<String> INFO,Context context) {
         this.inflater = inflater;
         this.INFO = INFO;
+        this.context = context;
     }
     @NonNull
     @Override
@@ -32,7 +36,13 @@ public class CustomRecyclerViewAdapter extends RecyclerView.Adapter<CustomRecycl
     public void onBindViewHolder(@NonNull CustomRecyclerViewAdapter.ViewHolder holder, int position) {
         holder.Star.setText(INFO.get(position));
         holder.Star_img.setImageResource(R.drawable.infoicon);
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context,INFO.get(holder.getAdapterPosition()),Toast.LENGTH_SHORT).show();
+                Log.i("RecyclerView",INFO.get(holder.getAdapterPosition()));
+            }
+        });
     }
     @Override
     public int getItemCount() {
