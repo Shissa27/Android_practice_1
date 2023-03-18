@@ -50,7 +50,6 @@ public class SecondFragment extends Fragment {
             String star = generateRandomAstra();
             Stars.add("Звезда " + star);
         }
-        Log.i("PUDGE",Stars.size()+"A");
         CustomViewListAdapter viewListAdapter = new CustomViewListAdapter(binding.getRoot().getContext(),R.layout.vlist_orig,Stars);
         binding.vlist.setAdapter(viewListAdapter);
     }
