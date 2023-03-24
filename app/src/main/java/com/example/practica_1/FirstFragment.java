@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,7 +22,7 @@ import com.example.practica_1.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
     String TAG = "Fragment 1";
     Button goFind,goInfo;
-
+    EditText editText;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         FragmentFirstBinding binding = FragmentFirstBinding.inflate(getLayoutInflater());
@@ -32,20 +33,22 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.i(TAG,"BTN1");
-                FragmentTransaction fragmentTransaction;
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame,new SecondFragment());
-                fragmentTransaction.commit();
+                editText = binding.getCoordinate;
+                String info = editText.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("message_new",info);
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_firstFragment_to_secondFragment3);
             }
         });
         goInfo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Log.i(TAG,"BTN2");
-                FragmentTransaction fragmentTransaction;
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame,new ThirdFragment());
-                fragmentTransaction.commit();
+                editText = binding.getCoordinate;
+                String info = editText.getText().toString();
+                Bundle bundle = new Bundle();
+                bundle.putString("message_new",info);
+                Navigation.findNavController(binding.getRoot()).navigate(R.id.action_firstFragment_to_thirdFragment);
             }
         });
         return binding.getRoot();
