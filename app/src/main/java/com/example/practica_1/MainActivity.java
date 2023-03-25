@@ -32,14 +32,14 @@ public class MainActivity extends AppCompatActivity {
     private void addFragment(Fragment fragment){
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.add(R.id.frame, fragment);
+        fragmentTransaction.add(R.id.fragment_container_view, fragment);
         fragmentTransaction.addToBackStack(null);
         fragmentTransaction.setReorderingAllowed(true);
         fragmentTransaction.commit();
     }
     private void replaceFragment(Fragment fragment){
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction().setReorderingAllowed(true);
-        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.replace(R.id.fragment_container_view,fragment);
         fragmentTransaction.commit();
 
     }

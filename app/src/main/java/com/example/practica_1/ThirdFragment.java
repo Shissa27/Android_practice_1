@@ -7,6 +7,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,8 @@ public class ThirdFragment extends Fragment {
     ThirdFragmentBinding binding;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        String message = getArguments().getString("message_new");
+        Log.i("ThirdFragment",message);
         List<String> info =new ArrayList<>();
         for (int i = 0; i < 200; i++) {
             info.add("Info " + i);

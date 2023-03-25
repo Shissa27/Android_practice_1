@@ -45,6 +45,8 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         final Random random = new Random();
+        String message = getArguments().getString("message_new");
+        Log.i(TAG,message);
         List<String> Stars =new ArrayList<>();
         for (int i = 0; i < 200; i++) {
             int num = random.nextInt(700);
